@@ -1,46 +1,132 @@
-# Astro Starter Kit: Basics
+# Today’s Bible Verse Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+The web project for Today’s Bible Verse, built with [Astro](https://astro.build).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The website is currently in its initial development stage. Its structure, navigation, dark color scheme, and public asset folders are established. Page content and final UI will be added incrementally.
 
-## 🚀 Project Structure
+## Current Pages
 
-Inside of your Astro project, you'll see the following folders and files:
+| Route | Purpose |
+| --- | --- |
+| `/` | Homepage |
+| `/privacy/` | Privacy policy |
+| `/404.html` | Page-not-found response |
+
+## Project Structure
 
 ```text
 /
 ├── public/
+│   ├── images/
+│   │   ├── app-screenshots/
+│   │   └── logo.png
+│   ├── store-badges/
+│   ├── favicon.ico
 │   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+│
+├── src/
+│   ├── components/
+│   │   ├── AppPromotion.astro
+│   │   ├── ContactSection.astro
+│   │   ├── DailyVerse.astro
+│   │   ├── Footer.astro
+│   │   └── Header.astro
+│   │
+│   ├── data/
+│   │   └── verses.ts
+│   │
+│   ├── layouts/
+│   │   └── BaseLayout.astro
+│   │
+│   ├── pages/
+│   │   ├── 404.astro
+│   │   ├── index.astro
+│   │   └── privacy.astro
+│   │
+│   ├── scripts/
+│   │   └── dailyVerse.ts
+│   │
+│   └── styles/
+│       ├── global.css
+│       └── variables.css
+│
+├── astro.config.mjs
+├── package.json
+├── package-lock.json
+└── tsconfig.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Local Development
 
-## 🧞 Commands
+Install the project dependencies:
 
-All commands are run from the root of the project, from a terminal:
+```sh
+npm install
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Start the local development server:
 
-## 👀 Want to learn more?
+```sh
+npm run dev
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Astro will display the local website address, normally:
+
+```text
+http://localhost:4321
+```
+
+## Available Commands
+
+| Command | Action |
+| --- | --- |
+| `npm install` | Installs project dependencies |
+| `npm run dev` | Starts the local development server |
+| `npm run build` | Creates the production website in `dist/` |
+| `npm run preview` | Previews the production build locally |
+| `npm run astro -- --help` | Displays Astro command help |
+
+## Production Build
+
+Create the static production website:
+
+```sh
+npm run build
+```
+
+The generated files are placed in:
+
+```text
+dist/
+```
+
+The `dist` directory is generated automatically and should not be edited manually.
+
+## Deployment
+
+The website is intended to be deployed as a static Astro site through Cloudflare.
+
+Recommended Cloudflare build settings:
+
+```text
+Build command: npm run build
+Build output directory: dist
+```
+
+## Content and Assets
+
+- Place the primary website logo at `public/images/logo.png`.
+- Place app screenshots in `public/images/app-screenshots/`.
+- Place official app-store badges in `public/store-badges/`.
+- Store the daily verse collection in `src/data/verses.ts`.
+- Add shared colors and design values to `src/styles/variables.css`.
+- Add site-wide styling to `src/styles/global.css`.
+
+Empty asset directories contain `.gitkeep` files so Git can preserve them. These placeholders can be removed after real assets are added.
+
+## Technology
+
+- Astro
+- TypeScript
+- Static HTML and CSS
+- Dark color scheme only

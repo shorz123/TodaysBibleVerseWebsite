@@ -22,18 +22,8 @@ a {
 	color: var(--color-link);
 }
 
-header,
 main,
 footer {
 	width: min(100% - (var(--page-padding) * 2), var(--page-width));
 	margin-inline: auto;
-}
-
-header {
-	padding-block: 1rem;
-}
-
-nav {
-	display: flex;
-	gap: 1rem;
 }
