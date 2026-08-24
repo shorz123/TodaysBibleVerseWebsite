@@ -1,1 +1,69 @@
-<footer></footer>
+<footer class="site-footer">
+	<a class="footer-logo" href="/" aria-label="Today's Bible Verse home">
+		<img src="/images/logo.png" alt="Today's Bible Verse" />
+	</a>
+
+	<nav aria-label="Footer navigation">
+		<a href="/#verse-of-the-day">Todays Verse</a>
+		<a href="/#phone-app">Mobile App</a>
+		<a href="/#about-contact">About / Contact</a>
+		<a href="/privacy/">Privacy Policy</a>
+	</nav>
+
+	<div class="footer-details">
+		<p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+		<p>Scripture quotations: World English Bible</p>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		margin-top: 4rem;
+		padding-block: 2rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		color: #b8b8b8;
+	}
+
+	.footer-logo {
+		width: fit-content;
+		margin: 0 auto 1.5rem;
+		display: block;
+	}
+
+	.footer-logo img {
+		display: block;
+		width: 6rem;
+		height: auto;
+	}
+
+	.site-footer nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 1.5rem;
+	}
+
+	.site-footer a {
+		color: inherit;
+		text-underline-offset: 0.2em;
+	}
+
+	.site-footer a:hover,
+	.site-footer a:focus-visible {
+		color: #ffffff;
+	}
+
+	.footer-details {
+		margin-top: 1.5rem;
+	}
+
+	.footer-details p {
+		margin: 0.4rem 0 0;
+	}
+
+	@media (max-width: 36rem) {
+		.site-footer nav {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+	}
+</style>
