@@ -1,17 +1,24 @@
 <footer class="site-footer">
-	<a class="footer-logo" href="/" aria-label="Today's Bible Verse home">
-		<img src="/images/logo.png" alt="Today's Bible Verse" />
-	</a>
+	<div class="footer-main">
+		<a class="footer-logo" href="/" aria-label="Today's Bible Verse home">
+			<img src="/images/logo.png" alt="Today's Bible Verse" />
+		</a>
 
-	<nav aria-label="Footer navigation">
-		<a href="/#verse-of-the-day">Todays Verse</a>
-		<a href="/#phone-app">Mobile App</a>
-		<a href="/#about-contact">About / Contact</a>
-		<a href="/privacy/">Privacy Policy</a>
-	</nav>
+		<nav aria-label="Footer navigation">
+			<a href="/#verse-of-the-day">Todays Verse</a>
+			<a href="/#phone-app">Mobile App</a>
+			<a href="/#about-contact">About / Contact</a>
+			<a href="/privacy/">Privacy Policy</a>
+		</nav>
+	</div>
 
 	<div class="footer-details">
-		<p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+		<p>
+			Contact:{' '}
+			<a href="mailto:todaysbibleverse.inquiry@gmail.com">
+				todaysbibleverse.inquiry@gmail.com
+			</a>
+		</p>
 		<p>Scripture quotations: World English Bible</p>
 	</div>
 </footer>
@@ -22,6 +29,17 @@
 		padding-block: 2rem;
 		border-top: 1px solid rgba(255, 255, 255, 0.1);
 		color: #b8b8b8;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.footer-main {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.footer-logo {
@@ -37,8 +55,10 @@
 	}
 
 	.site-footer nav {
+		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 		gap: 0.75rem 1.5rem;
 	}
 
@@ -53,7 +73,9 @@
 	}
 
 	.footer-details {
+		width: 100%;
 		margin-top: 1.5rem;
+		font-family: 'Montserrat Variable', Arial, sans-serif;
 	}
 
 	.footer-details p {
@@ -61,9 +83,21 @@
 	}
 
 	@media (max-width: 36rem) {
+		.footer-main {
+			flex-direction: row;
+			justify-content: center;
+			gap: 3rem;
+		}
+
+		.footer-logo {
+			margin: 0;
+		}
+
 		.site-footer nav {
+			width: auto;
 			align-items: flex-start;
 			flex-direction: column;
+			text-align: left;
 		}
 	}
 </style>

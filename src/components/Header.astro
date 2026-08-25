@@ -12,13 +12,10 @@ const currentPath = Astro.url.pathname;
 
 		<div class="nav-links">
 			<a href="/#verse-of-the-day" aria-current={currentPath === '/' ? 'page' : undefined}>
-				Today's Verse
+				Todays Verse
 			</a>
 			<a href="/#phone-app">Mobile App</a>
 			<a href="/#about-contact">About / Contact</a>
-			<a href="/privacy/" aria-current={currentPath === '/privacy/' ? 'page' : undefined}>
-				Privacy Policy
-			</a>
 		</div>
 	</nav>
 </header>
@@ -48,16 +45,16 @@ const currentPath = Astro.url.pathname;
 
 	.logo-link img {
 		display: block;
-		width: 8rem;
+		width: 12rem;
 		height: auto;
 	}
 
 	.nav-links {
 		min-width: 0;
-		flex: 1;
+		margin-left: auto;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: flex-end;
 		gap: clamp(1rem, 2.5vw, 2.5rem);
 	}
 
@@ -94,15 +91,31 @@ const currentPath = Astro.url.pathname;
 		}
 
 		.logo-link img {
-			width: 7rem;
+			width: 10rem;
 		}
 
 		.nav-links {
 			width: 100%;
+			margin-left: 0;
 			padding-bottom: 0.4rem;
-			overflow-x: auto;
-			justify-content: flex-start;
-			scrollbar-width: thin;
+			flex-wrap: nowrap;
+			justify-content: center;
+			gap: 0.75rem;
+		}
+
+		.nav-links a {
+			font-size: .8rem;
+		}
+	}
+
+	@media (max-width: 22rem) {
+		.nav-links {
+			gap: 0.25rem;
+		}
+
+		.nav-links a {
+			font-size: 0.625rem;
+			letter-spacing: 0.04em;
 		}
 	}
 </style>

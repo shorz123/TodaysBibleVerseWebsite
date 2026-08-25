@@ -2,4 +2,42 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Today's Bible Verse" />
+<BaseLayout title="Today's Bible Verse">
+	<section class="coming-soon" id="verse-of-the-day">
+		<h1>Today’s Bible Verse</h1>
+		<p>A daily Bible verse with persistent reading reminders.</p>
+		<p id="phone-app">Mobile apps coming soon to iOS and Android.</p>
+		<p id="about-contact">
+			Questions? Contact
+			<a href="mailto:todaysbibleverse.inquiry@gmail.com">
+				todaysbibleverse.inquiry@gmail.com</a
+			>.
+		</p>
+	</section>
+</BaseLayout>
+
+<style>
+	.coming-soon {
+		min-height: 60vh;
+		padding-block: 4rem;
+		display: grid;
+		place-content: center;
+		font-family: Georgia, 'Times New Roman', serif;
+		text-align: center;
+	}
+
+	.coming-soon h1 {
+		margin: 0 0 1.5rem;
+		text-transform: uppercase;
+	}
+
+	.coming-soon p {
+		margin: 0.5rem 0;
+		line-height: 1.6;
+	}
+
+	.coming-soon a {
+		color: #ffffff;
+		text-underline-offset: 0.2em;
+	}
+</style>
