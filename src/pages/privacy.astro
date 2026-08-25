@@ -109,7 +109,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	.privacy-policy {
 		max-width: 48rem;
 		margin-inline: auto;
-		padding-block: 3rem;
+		padding: 10.5rem 0 3rem;
 		font-family: Georgia, 'Times New Roman', serif;
 	}
 
@@ -137,5 +137,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	.privacy-policy a {
 		color: #ffffff;
 		text-underline-offset: 0.2em;
+	}
+
+	@media (max-width: 48rem) {
+		.privacy-policy {
+			padding-top: 8.4rem;
+		}
 	}
 </style>
