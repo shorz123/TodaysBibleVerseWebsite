@@ -3,40 +3,198 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Today's Bible Verse">
-	<section class="coming-soon" id="verse-of-the-day">
-		<p>A daily Bible verse with persistent reading reminders.</p>
-		<p id="phone-app">Mobile apps coming soon to iOS and Android.</p>
-		<p id="about-contact">
-			Questions? Contact: {' '}
-			<a href="mailto:todaysbibleverse.inquiry@gmail.com">
-				todaysbibleverse.inquiry@gmail.com</a
-			>.
-		</p>
+	<section class="mobile-app" id="phone-app" aria-label="Today’s Bible Verse mobile app">
+		<div class="mobile-app-layout">
+			<img
+				class="phone-preview"
+				src="/images/todaysbibleverseavailable.png"
+				alt="Today’s Bible Verse app displayed on a smartphone"
+				width="1024"
+				height="1536"
+				loading="lazy"
+				decoding="async"
+			/>
+			<div class="mobile-app-copy">
+				<img
+					class="message-logo"
+					src="/images/logo.png"
+					alt="Today’s Bible Verse"
+					width="1672"
+					height="941"
+					loading="lazy"
+					decoding="async"
+				/>
+				<div class="message-divider" aria-hidden="true"></div>
+				<p>
+					Today’s Bible Verse app
+					features 366 Bible verses centered on the core truths of the Christian
+					faith. Our hope is that these Scriptures will encourage you, strengthen your faith,
+					and help you spend time in God’s Word each day.
+				</p>
+
+				<p class="signature">Sincerely,<br />The App Team</p>
+				<div class="message-divider signature-divider" aria-hidden="true"></div>
+			</div>
+		</div>
+
+		<div class="store-availability" aria-label="App store availability">
+			<p>Coming Soon to:</p>
+			<div class="store-badges">
+				<img
+					class="app-store-badge"
+					src="/store-badges/download-on-the-app-store.svg"
+					alt="Download on the App Store"
+					width="135"
+					height="40"
+					loading="lazy"
+					decoding="async"
+				/>
+				<img
+					class="google-play-badge"
+					src="/store-badges/get-it-on-google-play.png"
+					alt="Get it on Google Play"
+					width="646"
+					height="250"
+					loading="lazy"
+					decoding="async"
+				/>
+			</div>
+		</div>
 	</section>
 </BaseLayout>
 
 <style>
-	.coming-soon {
-		min-height: 60vh;
-		padding-block: 4rem;
-		display: grid;
-		place-content: center;
+	.mobile-app {
+		padding: 4rem 1rem 4rem;
 		font-family: Georgia, 'Times New Roman', serif;
-		text-align: center;
 	}
 
-	.coming-soon h1 {
-		margin: 0 0 1.5rem;
-		text-transform: uppercase;
+	.mobile-app-layout {
+		display: grid;
+		grid-template-columns: minmax(0, 34rem) minmax(0, 1fr);
+		align-items: center;
+		gap: clamp(2.5rem, 6vw, 6rem);
+		max-width: 76rem;
+		margin: 0 auto;
 	}
 
-	.coming-soon p {
-		margin: 0.5rem 0;
+	.phone-preview {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0;
+	}
+
+	.mobile-app-copy {
+		transform: translateY(-4.5rem);
+		font-family: 'Montserrat Variable', Arial, sans-serif;
+		text-align: left;
+	}
+
+	.message-logo {
+		display: block;
+		width: min(100%, 20rem);
+		height: auto;
+		margin: 0 auto 3rem;
+	}
+
+	.message-divider {
+		display: none;
+	}
+
+	.mobile-app-copy p {
+		margin: 0 0 1.25rem;
 		line-height: 1.6;
 	}
 
-	.coming-soon a {
+	.mobile-app-copy a {
 		color: #ffffff;
+		overflow-wrap: anywhere;
 		text-underline-offset: 0.2em;
+	}
+
+	.mobile-app-copy .signature {
+		margin-bottom: 0;
+	}
+
+	.store-availability {
+		margin-top: clamp(4rem, 8vw, 7rem);
+		font-family: 'Montserrat Variable', Arial, sans-serif;
+		text-align: center;
+	}
+
+	.store-availability > p {
+		margin: 0 0 1.75rem;
+		font-size: 1.25rem;
+		font-weight: 600;
+	}
+
+	.store-badges {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+
+	.store-badges img {
+		display: block;
+		height: auto;
+	}
+
+	.app-store-badge {
+		width: 10.5rem;
+	}
+
+	.google-play-badge {
+		width: 11.75rem;
+	}
+
+	@media (max-width: 60rem) {
+		.mobile-app-layout {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+		}
+
+		.phone-preview {
+			width: min(100%, 34rem);
+			margin: 0 auto;
+			justify-self: center;
+		}
+
+		.mobile-app-copy {
+			max-width: 36rem;
+			margin: 0 auto;
+			transform: none;
+			text-align: center;
+		}
+
+		.message-logo {
+			margin-bottom: 2rem;
+		}
+
+		.message-divider {
+			display: block;
+			width: min(70%, 18rem);
+			margin: 0 auto 2.5rem;
+			border-top: 1px solid #6f6f6f;
+		}
+
+		.signature-divider {
+			margin: 2.5rem auto 0;
+		}
+
+		.store-badges {
+			flex-wrap: nowrap;
+			gap: 0.75rem;
+		}
+
+		.app-store-badge {
+			width: calc(47% - 0.375rem);
+		}
+
+		.google-play-badge {
+			width: calc(53% - 0.375rem);
+		}
 	}
 </style>

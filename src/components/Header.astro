@@ -6,8 +6,8 @@ const currentPath = Astro.url.pathname;
 
 <header class="site-header">
 	<nav class="navbar" aria-label="Primary navigation">
-		<a class="logo-link" href="/" aria-label="Today's Bible Verse home">
-			<img src="/images/logo.png" alt="Today's Bible Verse" />
+		<a class="header-logo" href="/" aria-label="Today’s Bible Verse home">
+			<img src="/images/logo.png" alt="" width="1672" height="941" />
 		</a>
 
 		<button
@@ -24,11 +24,10 @@ const currentPath = Astro.url.pathname;
 		</button>
 
 		<div class="nav-links" id="primary-links" data-nav-links data-open="false">
-			<a href="/#verse-of-the-day" aria-current={currentPath === '/' ? 'page' : undefined}>
-				Todays Verse
-			</a>
 			<a href="/#phone-app">Mobile App</a>
-			<a href="/#about-contact">About / Contact</a>
+			<a href="/privacy/" aria-current={currentPath.startsWith('/privacy') ? 'page' : undefined}>
+				Privacy Policy
+			</a>
 		</div>
 	</nav>
 </header>
@@ -36,29 +35,28 @@ const currentPath = Astro.url.pathname;
 <style>
 	.site-header {
 		width: 100%;
-		background: #0b0b0b;
+		background: var(--color-background);
 	}
 
 	.navbar {
 		width: min(100% - (var(--page-padding) * 2), var(--page-width));
 		min-height: 4.5rem;
-		margin-inline: auto;
-		display: flex;
-		align-items: center;
-		gap: clamp(1.5rem, 4vw, 4rem);
 		margin: 20px auto;
-	}
-
-	.logo-link {
-		flex: 0 0 auto;
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(3, max-content);
 		align-items: center;
-		text-decoration: none;
+		justify-content: flex-start;
+		gap: clamp(2.5rem, 7vw, 7rem);
 	}
 
-	.logo-link img {
+	.header-logo {
+		flex: 0 0 auto;
 		display: block;
-		width: 12rem;
+	}
+
+	.header-logo img {
+		display: block;
+		width: 8rem;
 		height: auto;
 	}
 
@@ -67,12 +65,7 @@ const currentPath = Astro.url.pathname;
 	}
 
 	.nav-links {
-		min-width: 0;
-		margin-left: auto;
-		display: flex;
-		align-items: center;
-		justify-content: flex-end;
-		gap: clamp(1rem, 2.5vw, 2.5rem);
+		display: contents;
 	}
 
 	.nav-links a {
@@ -94,7 +87,7 @@ const currentPath = Astro.url.pathname;
 	}
 
 	.nav-links a:focus-visible,
-	.logo-link:focus-visible {
+	.header-logo:focus-visible {
 		outline: 2px solid #ffffff;
 		outline-offset: 0.3rem;
 	}
@@ -102,23 +95,23 @@ const currentPath = Astro.url.pathname;
 	@media (max-width: 48rem) {
 		.navbar {
 			display: grid;
-			grid-template-columns: 1fr auto 1fr;
-			align-items: center;
+			grid-template-columns: 1fr auto;
+			justify-content: stretch;
 			gap: 0;
-			padding: 1.5rem 0 0.75rem;
 		}
 
-		.logo-link {
-			grid-column: 2;
-			justify-self: center;
+		.header-logo {
+			grid-column: 1;
+			justify-self: start;
+			margin-left: 1rem;
 		}
 
-		.logo-link img {
-			width: 10rem;
+		.header-logo img {
+			width: 8rem;
 		}
 
 		.menu-toggle {
-			grid-column: 3;
+			grid-column: 2;
 			justify-self: end;
 			width: 2.75rem;
 			height: 2.75rem;
@@ -148,8 +141,7 @@ const currentPath = Astro.url.pathname;
 		.nav-links {
 			grid-column: 1 / -1;
 			width: 100%;
-			margin-left: 0;
-			padding: 1.25rem 0 0.5rem;
+			padding: 1rem 0 0.5rem;
 			display: none;
 			align-items: center;
 			flex-direction: column;
