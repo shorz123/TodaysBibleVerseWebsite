@@ -1,7 +1,10 @@
 # Today’s Bible Verse Website 
 
-- Check it out: https://todaysbibleverse.org/
-- Status: Currently deployed with ongoing updates. 
+- Check out the deployed site: https://todaysbibleverse.org/
+- Status: Currently deployed with ongoing updates.
+  
+- Mobile App (iOS) https://apps.apple.com/us/app/todays-bible-verse/id6806392025
+Android - Currently in Testing (pre-deployment)
 
 # Website Preview
 
