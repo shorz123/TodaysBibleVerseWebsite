@@ -1,11 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const websiteStructuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	name: 'Today’s Bible Verse',
+	alternateName: 'Todays Bible Verse',
+	url: 'https://todaysbibleverse.org/',
+};
 ---
 
 <BaseLayout
 	title="Today’s Bible Verse | Daily Scripture App"
 	description="Today’s Bible Verse is a daily Scripture app featuring 366 carefully selected Bible verses to encourage and strengthen your Christian faith."
 	canonical="https://todaysbibleverse.org/"
+	structuredData={websiteStructuredData}
 >
 	<section class="mobile-app" id="phone-app" aria-label="Today’s Bible Verse mobile app">
 		<div class="mobile-app-layout">
@@ -19,18 +28,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				decoding="async"
 			/>
 			<div class="mobile-app-copy">
-				<img
-					class="message-logo"
-					src="/images/logo.png"
-					alt="Today’s Bible Verse"
-					width="1672"
-					height="941"
-					loading="lazy"
-					decoding="async"
-				/>
+				<h1 class="message-heading">
+					<span class="visually-hidden">Today’s Bible Verse</span>
+					<img
+						class="message-logo"
+						src="/images/logo.png"
+						alt=""
+						aria-hidden="true"
+						width="1672"
+						height="941"
+						loading="lazy"
+						decoding="async"
+					/>
+				</h1>
 				<div class="message-divider" aria-hidden="true"></div>
 				<p>
-					Today’s Bible Verse features daily Bible verses centered on the core truths of the Christian faith. Our hope is that these carefully selected Scriptures will encourage you, strengthen your faith, and help you spend time in God’s Word—one verse at a time.
+					Today’s Bible Verse is a mobile app that features daily Bible verses centered on the core truths of the Christian faith. Our hope is that these carefully selected Scriptures will encourage you, strengthen your faith, and help you spend time in God’s Word—one verse at a time.
 				</p>
 
 				<p class="signature">Sincerely,<br />The App Team</p>
@@ -105,6 +118,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		transform: translateY(-4.5rem);
 		font-family: 'Montserrat Variable', Arial, sans-serif;
 		text-align: left;
+	}
+
+	.message-heading {
+		margin: 0;
+		font-size: 0;
+		line-height: 0;
+	}
+
+	.visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		clip-path: inset(50%);
+		white-space: nowrap;
+		border: 0;
 	}
 
 	.message-logo {
